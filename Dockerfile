@@ -29,6 +29,6 @@ RUN apt-get update -y && \
     libgeos-dev \
     libcairo2-dev
 
-RUN R CMD INSTALL -l  rsai_2021.06.08.tar.gz
+RUN /opt/R/${R_VERSION}/bin/R CMD INSTALL -l  rsai_2021.06.08.tar.gz
 
 
