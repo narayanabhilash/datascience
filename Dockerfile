@@ -8,7 +8,7 @@ FROM rstudio/r-session-complete:bionic-1.4.1717-3
 
 ARG RSP_VERSION=1.2.5019-6
 
-ARG R_VERSION=3.6.1
+ARG R_VERSION=4.0.2
 
  
 
@@ -54,28 +54,18 @@ RUN apt-get update -y && \
 
 RUN ls -la opt/R/
 
-RUN R -v
+RUN R -version
 
 # Adding R packages to the r-session-complete image
 
-#RUN /opt/R/${R_VERSION}/bin/R -e 'install.packages("V8", repos="https://cran.rstudio.com")' && \
-
-#    /opt/R/${R_VERSION}/bin/R -e 'install.packages("png", repos="https://cran.rstudio.com")' && \
-
-#    /opt/R/${R_VERSION}/bin/R -e 'install.packages("units", repos="https://cran.rstudio.com")' && \
-
-#    /opt/R/${R_VERSION}/bin/R -e 'install.packages("leaflet", repos="https://cran.rstudio.com")' && \
-
-#    /opt/R/${R_VERSION}/bin/R -e 'install.packages("svglite", repos="https://cran.rstudio.com")' && \
-
-#    /opt/R/${R_VERSION}/bin/R -e 'install.packages("rgeos", repos="https://cran.rstudio.com")' && \
-
-#    /opt/R/${R_VERSION}/bin/R -e 'install.packages("sf", repos="https://cran.rstudio.com")' && \
-
-#    /opt/R/${R_VERSION}/bin/R -e 'install.packages("leafpop", repos="https://cran.rstudio.com")' && \
-
-#    /opt/R/${R_VERSION}/bin/R -e 'install.packages("rgdal", repos="https://cran.rstudio.com")' && \
-
-#    /opt/R/${R_VERSION}/bin/R -e 'install.packages("leafem", repos="https://cran.rstudio.com")' && \
-
-#    /opt/R/${R_VERSION}/bin/R -e 'install.packages("mapview", repos="https://cran.rstudio.com")'
+RUN /opt/R/${R_VERSION}/bin/R -e 'install.packages("V8", repos="https://cran.rstudio.com")' && \
+    /opt/R/${R_VERSION}/bin/R -e 'install.packages("png", repos="https://cran.rstudio.com")' && \
+    /opt/R/${R_VERSION}/bin/R -e 'install.packages("units", repos="https://cran.rstudio.com")' && \
+    /opt/R/${R_VERSION}/bin/R -e 'install.packages("leaflet", repos="https://cran.rstudio.com")' && \
+    /opt/R/${R_VERSION}/bin/R -e 'install.packages("svglite", repos="https://cran.rstudio.com")' && \
+    /opt/R/${R_VERSION}/bin/R -e 'install.packages("rgeos", repos="https://cran.rstudio.com")' && \
+    /opt/R/${R_VERSION}/bin/R -e 'install.packages("sf", repos="https://cran.rstudio.com")' && \
+    /opt/R/${R_VERSION}/bin/R -e 'install.packages("leafpop", repos="https://cran.rstudio.com")' && \
+    /opt/R/${R_VERSION}/bin/R -e 'install.packages("rgdal", repos="https://cran.rstudio.com")' && \
+    /opt/R/${R_VERSION}/bin/R -e 'install.packages("leafem", repos="https://cran.rstudio.com")' && \
+    /opt/R/${R_VERSION}/bin/R -e 'install.packages("mapview", repos="https://cran.rstudio.com")'
