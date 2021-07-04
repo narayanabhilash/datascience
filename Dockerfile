@@ -28,6 +28,7 @@ RUN apt-get update -y && \
     libcairo2-dev
 
 # Adding R packages to the r-session-complete image
+RUN /opt/R/${R_VERSION}/bin/R -e 'install.packages("gisadata", repos="https://github.com/kasaai/gisadata")'
 
 RUN /opt/R/${R_VERSION}/bin/R -e 'install.packages("V8", repos="https://cran.rstudio.com")' && \
     /opt/R/${R_VERSION}/bin/R -e 'install.packages("png", repos="https://cran.rstudio.com")' && \
