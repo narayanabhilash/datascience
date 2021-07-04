@@ -5,7 +5,7 @@ FROM rstudio/r-session-complete:bionic-1.4.1717-3
 
 ARG RSP_VERSION=1.2.5019-6
 ARG R_VERSION=4.0.2
-
+RUN pwd
 ADD ./rsai_2021.06.08.tar.gz .
 
 # Install additional system packages
@@ -28,7 +28,7 @@ RUN apt-get update -y && \
     libudunits2-dev \
     libgeos-dev \
     libcairo2-dev
-
+RUN pwd
 RUN /opt/R/${R_VERSION}/bin/R CMD INSTALL -l  rsai_2021.06.08.tar.gz
 
 
