@@ -42,7 +42,7 @@ RUN apt-get install -y cuda-toolkit-11-0
  
 #### Installing nvidia-driver:
 #### ========================
-RUN apt install nvidia-driver-465
+RUN apt install -y nvidia-driver-465
 
 
 # Adding R local package to the r-session-complete image
