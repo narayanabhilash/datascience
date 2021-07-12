@@ -9,7 +9,7 @@ ADD ./rsai_2021.06.08.tar.gz .
 COPY ./keyboard /etc/default/keyboard
 
 # environment variables 
-DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install additional system packages
 RUN apt-get update -y && \
