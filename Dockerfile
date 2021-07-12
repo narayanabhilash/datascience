@@ -32,17 +32,17 @@ RUN apt-get update -y && \
 #### =======================
 #### It is recommended to use the Linux package manager to install the CUDA for the Linux distributions supported under WSL 2. Follow these instructions to install the CUDA Toolkit.
 #### First, set up the CUDA network repository. The instructions shown here are for Ubuntu 18.04. See the CUDA Linux Installation Guide for more information on other distributions.
-#RUN apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
-#RUN sh -c 'echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64 /" > /etc/apt/sources.list.d/cuda.list'
-#RUN apt-get update
+RUN apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+RUN sh -c 'echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64 /" > /etc/apt/sources.list.d/cuda.list'
+RUN apt-get update
         
 #### Now install CUDA. Note that for WSL 2, you should use the cuda-toolkit-<version> meta-package to avoid installing the NVIDIA driver that is typically bundled with the toolkit. You can also install other components of the toolkit by choosing the right meta-package.
 #### Do not choose the cuda, cuda-11-0, or cuda-drivers meta-packages under WSL 2 since these packages will result in an attempt to install the Linux NVIDIA driver under WSL 2.
-#RUN apt-get install -y cuda-toolkit-11-0
+RUN apt-get install -y cuda-toolkit-11-0
  
 #### Installing nvidia-driver:
 #### ========================
-#RUN apt install -y nvidia-driver-465
+RUN apt install -y nvidia-driver-465 -q
 
 
 # Adding R local package to the r-session-complete image
