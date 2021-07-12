@@ -49,9 +49,9 @@ RUN apt-get update -y && \
 RUN /opt/R/${R_VERSION}/bin/R -e 'install.packages("/rsai_2021.06.08.tar.gz", repos=NULL, type="source")'
 
 # Adding R non-approved packages to the r-session-complete image
-#RUN /opt/R/${R_VERSION}/bin/R -e 'install.packages("gisadata", repos="https://github.com/kasaai/gisadata")' && \
-#    /opt/R/${R_VERSION}/bin/R -e 'install.packages("h3jsr", repos="https://github.com/obrl-soil/h3jsr")' && \
-#    /opt/R/${R_VERSION}/bin/R -e 'install.packages("mlr3forecasting", repos="https://github.com/mlr-org/mlr3temporal")'
+RUN /opt/R/${R_VERSION}/bin/R -e 'install.packages("gisadata", repos="https://github.com/kasaai/gisadata")' && \
+    /opt/R/${R_VERSION}/bin/R -e 'install.packages("h3jsr", repos="https://github.com/obrl-soil/h3jsr")' && \
+    /opt/R/${R_VERSION}/bin/R -e 'install.packages("mlr3forecasting", repos="https://github.com/mlr-org/mlr3temporal")'
 
 # Removed all R packages
     
