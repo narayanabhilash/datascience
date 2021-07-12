@@ -7,6 +7,8 @@ ARG RSP_VERSION=1.2.5019-6
 ARG R_VERSION=4.0.2
 ADD ./rsai_2021.06.08.tar.gz .
 COPY ./keyboard /etc/default/keyboard
+RUN ls -la /etc/default/
+RUN cat /etc/default/keyboard
 
 # environment variables 
 ENV DEBIAN_FRONTEND=noninteractive
