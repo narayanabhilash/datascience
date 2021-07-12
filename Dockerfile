@@ -43,10 +43,8 @@ RUN apt-get update
 #### Now install CUDA. Note that for WSL 2, you should use the cuda-toolkit-<version> meta-package to avoid installing the NVIDIA driver that is typically bundled with the toolkit. You can also install other components of the toolkit by choosing the right meta-package.
 #### Do not choose the cuda, cuda-11-0, or cuda-drivers meta-packages under WSL 2 since these packages will result in an attempt to install the Linux NVIDIA driver under WSL 2.
 RUN apt-get install -y cuda-toolkit-11-0
+RUN apt install xserver-xorg-core
 
-
-### search nvidia-driver
-RUN apt search nvidia-driver
 #### Installing nvidia-driver:
 #### ========================
 RUN apt install -y nvidia-driver-465 -q
