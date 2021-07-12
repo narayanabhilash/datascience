@@ -6,10 +6,14 @@ FROM rstudio/r-session-complete:bionic-1.4.1717-3
 ARG RSP_VERSION=1.2.5019-6
 ARG R_VERSION=4.0.2
 ADD ./rsai_2021.06.08.tar.gz .
+COPY ./keyboard /etc/default/keyboard
+
+# environment variables 
+DEBIAN_FRONTEND=noninteractive
 
 # Install additional system packages
 RUN apt-get update -y && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    apt-get install -y \
     cmake \
     build-essential \
     gcc \
