@@ -30,8 +30,7 @@ RUN apt-get update -y && \
     libv8-dev \
     libudunits2-dev \
     libgeos-dev \
-    libcairo2-dev \
-    xserver-xorg-core
+    libcairo2-dev
     
 #### Setting up CUDA Toolkit:
 #### =======================
